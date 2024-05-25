@@ -1,0 +1,75 @@
+{
+    "info": {
+      "name": "OTT My List APIs",
+      "_postman_id": "abc12345-6789-0def-1234-567890abcdef",
+      "description": "Collection of APIs for the My List feature",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Add to My List",
+        "request": {
+          "method": "POST",
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            }
+          ],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n  \"userId\": \"1\",\n  \"contentId\": \"m1\",\n  \"contentType\": \"Movie\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:5000/api/mylist",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["api", "mylist"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Remove from My List",
+        "request": {
+          "method": "DELETE",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:5000/api/mylist/1/m1",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["api", "mylist", "1", "m1"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "List My Items",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:5000/api/mylist/1?page=1&limit=10",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "5000",
+            "path": ["api", "mylist", "1"],
+            "query": [
+              {
+                "key": "page",
+                "value": "1"
+              },
+              {
+                "key": "limit",
+                "value": "10"
+              }
+            ]
+          }
+        },
+        "response": []
+      }
+    ]
+  }
+  
