@@ -2,11 +2,11 @@ import mongoose from 'mongoose';
 import User from '../src/models/user';
 import Movie from '../src/models/movie';
 import TVShow from '../src/models/tvShow';
+import dbConnect from '../src/utils/dbConnect';
+
 
 const seedData = async () => {
-  await mongoose.connect('mongodb+srv://mishrasiddharth1999:Reenter2@cluster0.drc2anz.mongodb.net/ott?retryWrites=true&w=majority&appName=Cluster0', {
-
-  });
+  await dbConnect();
 
   await User.create([
     {
